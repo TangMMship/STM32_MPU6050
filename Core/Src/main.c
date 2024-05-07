@@ -32,6 +32,7 @@
 /* USER CODE BEGIN PTD */
 #define IIC_SCL    PBout(10) //SCL输出配置  对相应的电器属性的寄存器写值
 #define IIC_SDA    PBout(11) //SDA输出配置
+#define IIC_readSDA PBin(11)
 #define LED   PCout(13) //SDA输出配置
 #define MPU6050_ADDRESS		0xD0
 #define	MPU6050_SMPLRT_DIV		0x19
@@ -208,11 +209,9 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-      //printf("addrs:%d\r\n",addr_search());
-      LED=1;
-      for(int i=0;i<100000;i++)Delay_uS(10);
-      LED=0;
-      for(int i=0;i<100000;i++)Delay_uS(10);
+      int addr=addr_search();
+      printf("addrs:%d\r\n",addr);
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -263,12 +262,14 @@ void SystemClock_Config(void)
 void IIC_Start()
 {
     IIC_SDA=1;
+    Delay_uS(10);
     IIC_SCL=1;
     //修改了Delay_uS(数  此时延时单位us
     Delay_uS(10);
     IIC_SDA=0;
     Delay_uS(10);   //开始信号
     IIC_SCL=0;            //SCL拉低可以传输信号
+    Delay_uS(10);
 }
 /*IIC停止信号
  * 当SCL为高时 SDA跳变为高
@@ -278,7 +279,7 @@ void IIC_Start()
  */
 void IIC_Stop()
 {
-    IIC_SCL=0;
+
     IIC_SDA=0;
     Delay_uS(10);
     IIC_SCL=1;
@@ -298,7 +299,7 @@ uint8_t Wait_ack()
     Delay_uS(4);
     IIC_SCL=1;       //读数据
     Delay_uS(6);
-    while(IIC_SDA)
+    while(IIC_readSDA)
     {
         count++;
         if(count>250)       //一直没应答
@@ -317,15 +318,16 @@ uint8_t Wait_ack()
 void IIC_Sendbyte(uint8_t txb)
 {
     uint8_t i;
-    IIC_SCL=0;
+    //IIC_SCL=0;
     for(i=0;i<8;i++)
     {
         IIC_SDA=(txb&0x80)>>7;      //iic从最高位开始传输，取最高位再移动到第一位给SDA赋值
         txb<<=1;
+        Delay_uS(10);
         IIC_SCL=1;
-        Delay_uS(4);
+        Delay_uS(10);
         IIC_SCL=0;
-        Delay_uS(3);
+        Delay_uS(10);
     }
 }
 
@@ -336,26 +338,20 @@ void IIC_Sendbyte(uint8_t txb)
  */
 uint8_t IIC_Readbyte(unsigned char ack)
 {
+
     uint8_t rebyte,i;
     rebyte=0;
     IIC_SDA=1;          //不干扰
-    for(i=0;i<8;i++)
+    Delay_uS(10);
+    for (i = 0; i < 8; i ++)
     {
-        IIC_SCL=0;
-        Delay_uS(6);    //一般iic传输速率100kb，差不多1.25us  高速400kb
         IIC_SCL=1;
-        rebyte<<=1;
-        rebyte|=IIC_SDA;
-        Delay_uS(6);
+        Delay_uS(10);
+        if (IIC_readSDA == 1){rebyte |= (0x80 >> i);}
+        IIC_SCL=0;
+        Delay_uS(10);
     }
-    if(ack)
-    {
-        IIC_Sendack();
-    }
-    else
-    {
-        IIC_Nsendack();
-    }
+
     return rebyte;
 }
 
@@ -373,20 +369,21 @@ void IIC_Sendack()
 }
 void IIC_Nsendack()
 {
-    IIC_SCL=0;
+
     IIC_SDA=1;                  //拉高SDA产生非应答信号
-    Delay_uS(4);
+    Delay_uS(10);
     IIC_SCL=1;
-    Delay_uS(4);         //完成应答
+    Delay_uS(10);         //完成应答
     IIC_SCL=0;                  //等待下次信号
 }
 void MPU6050_WriteReg(uint8_t RegAddress, uint8_t Data)
 {
     IIC_Start();
     IIC_Sendbyte(MPU6050_ADDRESS);
-    if(Wait_ack()==1){printf("err_ack\r\n");}
+    int ack=Wait_ack();
+    if(ack==1){printf("err_ack\r\n");}
     else
-//        printf("%d\r\n",)
+        printf("%d\r\n",ack);
     IIC_Sendbyte(RegAddress);
     if(Wait_ack())printf("err_ack\r\n");
     IIC_Sendbyte(Data);
@@ -408,6 +405,7 @@ uint8_t MPU6050_ReadReg(uint8_t RegAddress)
     IIC_Sendbyte(MPU6050_ADDRESS | 0x01);
     if(Wait_ack()==1){printf("err_ack\r\n");}
     Data = IIC_Readbyte(0);
+    IIC_Nsendack();
     IIC_Stop();
 
     return Data;
@@ -456,23 +454,32 @@ void MPU6050_GetData(int16_t *AccX, int16_t *AccY, int16_t *AccZ,
     DataL = MPU6050_ReadReg(MPU6050_GYRO_ZOUT_L);
     *GyroZ = (DataH << 8) | DataL;
 }
+
+
+
+//一开始只有一个起始在循环外面，发的遍历寻址没有停止信号，相当于给第一个地址一直发消息，因为没停止信号其他信号不知道是寻址。
 int addr_search()
 {
-    uint8_t addr=0,i=0,addrs;
-    IIC_Start();
+    uint8_t addr=0,i=0,addrs,ack;
+
     for(i=0;i<255;i++)
     {
+        IIC_Start();
         addrs=addr<<1;
-        IIC_Sendbyte(MPU6050_ADDRESS);
-        if(Wait_ack()==0)
+        IIC_Sendbyte(addrs);
+        ack=Wait_ack();
+        printf("adc:%d\r\n",ack);
+        if(ack==0)
         {
-            printf("addrs:%d\r\n",addrs);
-            return 1;
+            IIC_Stop();
+            return addrs;
 
         }
+        else
+            IIC_Stop();
         addr++;
     }
-    IIC_Stop();
+
     return 0;
 }
 /* USER CODE END 4 */
