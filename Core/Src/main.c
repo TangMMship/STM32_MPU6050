@@ -468,7 +468,6 @@ int addr_search()
         addrs=addr<<1;
         IIC_Sendbyte(addrs);
         ack=Wait_ack();
-        printf("adc:%d\r\n",ack);
         if(ack==0)
         {
             IIC_Stop();

@@ -15,15 +15,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d440a46b-e158-489a-bdaf-5d0b960307aa" name="变更" comment="io">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/Src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STM32_MPU6050.elf.dir/Core/Src/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STM32_MPU6050.elf.dir/Core/Src/main.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/STM32_MPU6050.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/STM32_MPU6050.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/STM32_MPU6050.elf" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/STM32_MPU6050.elf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/STM32_MPU6050.hex" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/STM32_MPU6050.hex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/STM32_MPU6050.map" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/STM32_MPU6050.map" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +104,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1715082978787</updated>
-      <workItem from="1715082995556" duration="12398000" />
+      <workItem from="1715082995556" duration="12416000" />
     </task>
     <task id="LOCAL-00001" summary="io">
       <created>1715092239608</created>
@@ -121,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715092239608</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="io">
+      <created>1715097241892</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1715097241892</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
