@@ -124,10 +124,10 @@ int main(void)
 //      printf("ID:%x\r\n",MPU6050_GetID());
 //      MPU6050_GetData(&AX, &AY, &AZ, &GX, &GY, &GZ);
 //      printf("AX:%d  ,AY:%d   ,AZ:%d   ,GX:%d   ,GY:%d   ,GZ:%d   \r\n",AX,AY,AZ,GX,GY,GZ);
-      printf("pitch:%f\r\n",imu_Angle.Pitch);
-      printf("roll:%f\r\n",imu_Angle.Roll);
-      printf("yaw:%f\r\n",imu_Angle.Yaw);
-      HAL_Delay(10);
+//      printf("pitch:%f\r\n",imu_Angle.Pitch);
+//      printf("roll:%f\r\n",imu_Angle.Roll);
+//      printf("yaw:%f\r\n",imu_Angle.Yaw);
+ //     HAL_GPIO_WritePin(GPIOC,GPIO_PIN_13,GPIO_PIN_RESET);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -178,10 +178,14 @@ void SystemClock_Config(void)
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
+    int16_t counter = 0;
+    counter = __HAL_TIM_GET_COUNTER(&htim2);
     if (htim==(&htim2))
     {
         IMU_getEuleranAngles();
     }
+    counter=__HAL_TIM_GET_COUNTER(&htim2)-counter;
+    printf("%d\r\n",counter);
 }
 
 /* USER CODE END 4 */
