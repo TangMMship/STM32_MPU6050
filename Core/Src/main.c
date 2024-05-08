@@ -201,6 +201,7 @@ int main(void)
   MX_TIM1_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
+    HAL_Delay(1000);
     MPU6050_Init();
     ID = MPU6050_GetID();
   /* USER CODE END 2 */
@@ -209,8 +210,9 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-      int addr=addr_search();
-      printf("addrs:%d\r\n",addr);
+      printf("ID:%x\r\n",MPU6050_GetID());
+      MPU6050_GetData(&AX, &AY, &AZ, &GX, &GY, &GZ);
+      printf("AX:%d  ,AY:%d   ,AZ:%d   ,GX:%d   ,GY:%d   ,GZ:%d   \r\n",AX,AY,AZ,GX,GY,GZ);
 
     /* USER CODE END WHILE */
 

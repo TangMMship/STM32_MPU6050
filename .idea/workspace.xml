@@ -15,7 +15,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d440a46b-e158-489a-bdaf-5d0b960307aa" name="变更" comment="io">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/Src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/STM32_MPU6050.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/STM32_MPU6050.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/STM32_MPU6050.elf" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/STM32_MPU6050.elf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/STM32_MPU6050.hex" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/STM32_MPU6050.hex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/STM32_MPU6050.map" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/STM32_MPU6050.map" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,12 +80,12 @@
     </key>
   </component>
   <component name="RunManager" selected="OpenOCD 下载并运行.OCD STM32_MPU6050">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="STM32_MPU6050.elf" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="STM32_MPU6050" TARGET_NAME="STM32_MPU6050.elf" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="STM32_MPU6050" RUN_TARGET_NAME="STM32_MPU6050.elf">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="STM32_MPU6050.elf" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="STM32_MPU6050" TARGET_NAME="STM32_MPU6050.elf" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="STM32_MPU6050" RUN_TARGET_NAME="STM32_MPU6050.elf">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -105,6 +112,7 @@
       <option name="presentableId" value="Default" />
       <updated>1715082978787</updated>
       <workItem from="1715082995556" duration="12416000" />
+      <workItem from="1715125966287" duration="2431000" />
     </task>
     <task id="LOCAL-00001" summary="io">
       <created>1715092239608</created>
