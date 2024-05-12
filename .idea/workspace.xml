@@ -15,36 +15,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d440a46b-e158-489a-bdaf-5d0b960307aa" name="变更" comment="io">
-      <change afterPath="$PROJECT_DIR$/Core/Inc/iic.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Inc/imu.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Inc/mpu6050.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Inc/mpu6050_reg.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Src/iic.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Src/imu.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Src/mpu6050.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Inc/stm32f1xx_it.h" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Inc/stm32f1xx_it.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Inc/tim.h" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Inc/tim.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/Src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Src/stm32f1xx_it.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/stm32f1xx_it.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Src/tim.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/tim.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/STM32_MPU6050.ioc" beforeDir="false" afterPath="$PROJECT_DIR$/STM32_MPU6050.ioc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-150f9e9309b4c6972767.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-05-07T14-22-35-0850.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-STM32_MPU6050.elf-Debug-2d76977ce243b64d0ae6.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.21.1/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.21.1/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.21.1/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.21.1/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STM32_MPU6050.elf.dir/Core/Src/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STM32_MPU6050.elf.dir/Core/Src/main.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STM32_MPU6050.elf.dir/Core/Src/stm32f1xx_it.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STM32_MPU6050.elf.dir/Core/Src/stm32f1xx_it.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STM32_MPU6050.elf.dir/Core/Src/tim.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STM32_MPU6050.elf.dir/Core/Src/tim.c.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/STM32_MPU6050.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/STM32_MPU6050.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/STM32_MPU6050.elf" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/STM32_MPU6050.elf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/STM32_MPU6050.hex" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/STM32_MPU6050.hex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/STM32_MPU6050.map" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/STM32_MPU6050.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +114,7 @@
       <updated>1715082978787</updated>
       <workItem from="1715082995556" duration="12416000" />
       <workItem from="1715125966287" duration="3549000" />
-      <workItem from="1715130285240" duration="7415000" />
+      <workItem from="1715130285240" duration="10549000" />
     </task>
     <task id="LOCAL-00001" summary="io">
       <created>1715092239608</created>
@@ -158,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715128661958</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="io">
+      <created>1715141316117</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715141316117</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

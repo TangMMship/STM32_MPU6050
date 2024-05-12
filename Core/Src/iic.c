@@ -19,14 +19,14 @@ void Delay_uS(uint16_t uS_Count)
 void IIC_Start()
 {
     IIC_SDA=1;
-    Delay_uS(10);
+    Delay_uS(2);
     IIC_SCL=1;
     //修改了Delay_uS(数  此时延时单位us
-    Delay_uS(10);
+    Delay_uS(2);
     IIC_SDA=0;
-    Delay_uS(10);   //开始信号
+    Delay_uS(2);   //开始信号
     IIC_SCL=0;            //SCL拉低可以传输信号
-    Delay_uS(10);
+    Delay_uS(2);
 }
 /*IIC停止信号
  * 当SCL为高时 SDA跳变为高
@@ -38,11 +38,11 @@ void IIC_Stop()
 {
 
     IIC_SDA=0;
-    Delay_uS(10);
+    Delay_uS(2);
     IIC_SCL=1;
-    Delay_uS(10);
+    Delay_uS(2);
     IIC_SDA=1;
-    Delay_uS(10);
+    Delay_uS(2);
 }
 
 /*等待应答
@@ -53,7 +53,7 @@ uint8_t Wait_ack()
 {
     uint8_t count=0;   //滤波系数  防止电平跳变的影响
     IIC_SDA=1;       //不用SDA时都要为高阻态，只有传输信号的设备SDA可以拉低，因为是开漏，所以SDA整条线都会拉低,因此一次只能有一个设备发送消息
-    Delay_uS(4);
+    Delay_uS(2);
     IIC_SCL=1;       //读数据
     Delay_uS(6);
     while(IIC_readSDA)
@@ -80,11 +80,11 @@ void IIC_Sendbyte(uint8_t txb)
     {
         IIC_SDA=(txb&0x80)>>7;      //iic从最高位开始传输，取最高位再移动到第一位给SDA赋值
         txb<<=1;
-        Delay_uS(10);
+        Delay_uS(2);
         IIC_SCL=1;
-        Delay_uS(10);
+        Delay_uS(2);
         IIC_SCL=0;
-        Delay_uS(10);
+        Delay_uS(2);
     }
 }
 
@@ -99,14 +99,14 @@ uint8_t IIC_Readbyte(unsigned char ack)
     uint8_t rebyte,i;
     rebyte=0;
     IIC_SDA=1;          //不干扰
-    Delay_uS(10);
+    Delay_uS(2);
     for (i = 0; i < 8; i ++)
     {
         IIC_SCL=1;
-        Delay_uS(10);
+        Delay_uS(2);
         if (IIC_readSDA == 1){rebyte |= (0x80 >> i);}
         IIC_SCL=0;
-        Delay_uS(10);
+        Delay_uS(2);
     }
 
     return rebyte;
@@ -119,17 +119,17 @@ void IIC_Sendack()
 {
     IIC_SCL=0;
     IIC_SDA=0;                  //拉高SDA产生非应答信号
-    Delay_uS(4);
+    Delay_uS(2);
     IIC_SCL=1;
-    Delay_uS(4);         //完成应答
+    Delay_uS(2);         //完成应答
     IIC_SCL=0;                  //等待下次信号
 }
 void IIC_Nsendack()
 {
 
     IIC_SDA=1;                  //拉高SDA产生非应答信号
-    Delay_uS(10);
+    Delay_uS(2);
     IIC_SCL=1;
-    Delay_uS(10);         //完成应答
+    Delay_uS(2);         //完成应答
     IIC_SCL=0;                  //等待下次信号
 }
